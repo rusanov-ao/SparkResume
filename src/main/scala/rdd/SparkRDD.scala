@@ -12,11 +12,24 @@ object SparkRDD {
 
     val sc = new SparkContext(conf)
 
-    sc.textFile("build.sbt")
-      .flatMap(line => line.split(" "))
-      .map(word => (word, 1))
-      .reduceByKey({case (a, b) => a + b})
-      .saveAsTextFile("/home/alexander/wc.txt")
+//    sc.textFile("/home/alexander/for_spark/a.txt")
+//      .flatMap(line => line.split(" "))
+//      .map(word => (word, 1))
+//      .reduceByKey({case (a, b) => a + b})
+//      .saveAsTextFile("/home/alexander/for_spark/wc.txt")
+
+//    sc.textFile("/home/alexander/for_spark/a.txt")
+//      .flatMap(line => line.split(" "))
+//      .map(word => word + "=)")
+//      .saveAsTextFile("/home/alexander/for_spark/a1.txt")
+
+
+    val a = sc.textFile("/home/alexander/for_spark/a.txt")
+          .flatMap(line => line.split(" "))
+          .map(word => word + "=)")
+          .foreach(line => println(line))
+
+    //println(a.toString())
 
   }
 
