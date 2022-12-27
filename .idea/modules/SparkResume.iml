@@ -118,6 +118,7 @@
     <orderEntry type="library" name="sbt: org.apache.spark:spark-network-shuffle_2.11:2.4.6:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-sketch_2.11:2.4.6:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-sql_2.11:2.4.6:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.spark:spark-streaming_2.11:2.4.6:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-tags_2.11:2.4.6:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-unsafe_2.11:2.4.6:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.xbean:xbean-asm6-shaded:4.8:jar" level="project" />
