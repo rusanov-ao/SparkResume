@@ -6,7 +6,7 @@ import org.apache.spark.sql.SparkSession
 //apache hadoop
 object SparkStream {
 
-  def main(args: Array[String]): Unit = {
+  //def main(args: Array[String]): Unit = {
 
 
     val spark = SparkSession.builder()
@@ -35,5 +35,5 @@ object SparkStream {
       .start()
 
     query.awaitTermination()
-  }
+ // }
 }

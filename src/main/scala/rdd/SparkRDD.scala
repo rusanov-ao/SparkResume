@@ -1,5 +1,6 @@
 package rdd
 
+import org.apache.spark.sql.catalyst.dsl.expressions.intToLiteral
 import org.apache.spark.{SparkConf, SparkContext}
 
 object SparkRDD {
@@ -35,17 +36,48 @@ object SparkRDD {
 
     println(s"Количество строк ${rdd.count()}")
 
-    val rdd2 = rdd
-      .filter(line => line.contains("spark"))
-      .foreach(line => println(line))
+//    val rdd2 = rdd
+//      .filter(line => line.contains("spark"))
+//      .foreach(line => println(line))
 
-    val rdd3 = rdd
-      .filter(word => word.contains("spark"))
+    //val rdd3 = rdd
+     // .filter(word => word.contains("spark"))
 
 
-    println(s"\nКоличество повторяющихся слов spark равняется ${rdd3.count()}")
+    //println(s"\nКоличество повторяющихся слов spark равняется ${rdd3.count()}\n")
 
-    //println(a.toString())
+   // rdd3.collect().foreach(x => println(x)) // сохранить драйверу и вывести
+    //rdd3.take(50).foreach(line => println(line)) // вывести определенное количество
+
+//    val rdd4 = rdd
+//      .map(line => line.split(" ").size)
+//      .reduce((a, b) => if (a > b) a else b)
+//
+//    println(rdd4)
+//
+//    val rdd5 = rdd
+//      .map(line => line.split(" ").size)
+//      .reduce((a, b) => Math.max(a, b))
+//
+//    println(s"\n${rdd5.toString}")
+//
+//    val rdd6 = rdd
+      //.map(s => s.length).reduce((a, b) => a + b)
+
+    val rdd7 = rdd
+      .map(line => (line, 1))
+      .reduceByKey((a, b) => a + b)
+
+    rdd7.foreach(x => println(x))
+
+
+
+
+
+
+
+
+
 
   }
 

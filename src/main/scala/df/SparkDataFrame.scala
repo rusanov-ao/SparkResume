@@ -17,7 +17,7 @@ object SparkDataFrame {
 //    .config("spark.num-executor", 2)
     .getOrCreate()
 
-    def main(args: Array[String]): Unit = {
+   // def main(args: Array[String]): Unit = {
 
 
       val df = spark.read.format("parquet").load("/home/alexander/test")
@@ -30,6 +30,6 @@ object SparkDataFrame {
 
 
 
-    }
+   // }
 
 }
